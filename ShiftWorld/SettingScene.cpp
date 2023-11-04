@@ -86,6 +86,8 @@ void SettingsScene::update()
 		{
 			getData().soundVolume = int8(Clamp((getData().soundVolume + diff), 0, 10));
 
+			GlobalAudio::BusSetVolume(MixBus0, getData().soundVolume * 0.1);
+
 			m_buttons[1].text = font(U"{:3d} %"_fmt(getData().soundVolume * 10));
 		}
 	}

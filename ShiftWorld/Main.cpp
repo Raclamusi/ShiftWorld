@@ -121,6 +121,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
 	gameData->load();
 
 	Window::Resize(ResolutionToSize(gameData->resolution));
+	GlobalAudio::BusSetVolume(MixBus0, gameData->soundVolume * 0.1);
 
 	App manager{ gameData };
 	manager
