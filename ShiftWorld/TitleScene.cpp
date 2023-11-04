@@ -27,7 +27,7 @@ TitleScene::TitleScene(const InitData& init)
 
 	for (auto&& [i, button] : IndexedRef(m_buttons))
 	{
-		button.region = RectF{ 12, (9 + i * 2), 8, 1.5 };
+		button.region = RectF{ 12, (8 + i * 2), 8, 1.5 };
 	}
 }
 
@@ -58,7 +58,7 @@ void TitleScene::update()
 
 void TitleScene::draw() const
 {
-	m_title.drawAt(2, 16, 6, Palette::White);
+	m_title.drawAt(2, 16, 4, Palette::White);
 
 	m_buttons.draw();
 }
