@@ -3,7 +3,7 @@
 SettingsScene::SettingsScene(const InitData& init)
 	: IScene{ init }
 	, m_texts(2)
-	, m_buttons(3)
+	, m_buttons(4)
 	, m_leftRightButtons(4)
 {
 	const Font& titleFont = FontAsset(U"Title");
@@ -18,6 +18,7 @@ SettingsScene::SettingsScene(const InitData& init)
 		m_texts[0] = font(U"かいぞうど");
 		m_texts[1] = font(U"こうかおん");
 		m_buttons[2].text = font(U"もどる");
+		m_buttons[3].text = font(U"ライセンスを表示");
 	}
 	else
 	{
@@ -25,6 +26,7 @@ SettingsScene::SettingsScene(const InitData& init)
 		m_texts[0] = font(U"Resolution");
 		m_texts[1] = font(U"Sound Volume");
 		m_buttons[2].text = font(U"Back");
+		m_buttons[3].text = font(U"Show Licenses");
 	}
 
 	for (auto&& [i, button] : IndexedRef(m_leftRightButtons))
@@ -32,15 +34,16 @@ SettingsScene::SettingsScene(const InitData& init)
 		button.text = font((i % 2 == 0) ? U"<" : U">");
 	}
 
-	m_leftRightButtons[0].region = RectF{ 16, 7, 1.5, 1.5 };
-	m_buttons[0].region = RectF{ 18, 7, 6, 1.5 };
-	m_leftRightButtons[1].region = RectF{ 24.5, 7, 1.5, 1.5 };
+	m_leftRightButtons[0].region = RectF{ 16, 6, 1.5, 1.5 };
+	m_buttons[0].region = RectF{ 18, 6, 6, 1.5 };
+	m_leftRightButtons[1].region = RectF{ 24.5, 6, 1.5, 1.5 };
 
-	m_leftRightButtons[2].region = RectF{ 16, 9, 1.5, 1.5 };
-	m_buttons[1].region = RectF{ 18, 9, 6, 1.5 };
-	m_leftRightButtons[3].region = RectF{ 24.5, 9, 1.5, 1.5 };
+	m_leftRightButtons[2].region = RectF{ 16, 8, 1.5, 1.5 };
+	m_buttons[1].region = RectF{ 18, 8, 6, 1.5 };
+	m_leftRightButtons[3].region = RectF{ 24.5, 8, 1.5, 1.5 };
 
-	m_buttons[2].region = RectF{ 12, 14, 8, 1.5 };
+	m_buttons[2].region = RectF{ 12, 13, 8, 1.5 };
+	m_buttons[3].region = RectF{ 12, 10, 8, 1.5 };
 
 	m_leftRightButtons.focusedButton().blur();
 }
@@ -103,6 +106,10 @@ void SettingsScene::update()
 
 			changeScene(AppState::Title, TransitionTimeDefault);
 		}
+		else if (index == 3)
+		{
+			LicenseManager::ShowInBrowser();
+		}
 	}
 
 	if (KeyNo.down())
@@ -119,8 +126,8 @@ void SettingsScene::draw() const
 {
 	m_title.drawAt(1.5, 16, 3, Palette::White);
 
-	m_texts[0].drawAt(0.8, 11, 7.75, Palette::White);
-	m_texts[1].drawAt(0.8, 11, 9.75, Palette::White);
+	m_texts[0].drawAt(0.8, 11, 6.75, Palette::White);
+	m_texts[1].drawAt(0.8, 11, 8.75, Palette::White);
 
 	m_buttons.draw();
 
