@@ -136,6 +136,9 @@
     <Filter Include="Resource Files\engine\font\min">
       <UniqueIdentifier>{1b103960-f11a-4515-b4f1-f59333ce00d9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\resource">
+      <UniqueIdentifier>{39f16ce2-1ab8-43db-a1fc-130c79cb714b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -157,6 +160,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GameData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -232,6 +238,9 @@
     </Image>
     <Image Include="App\example\obj\siv3d-kun-eye.png">
       <Filter>Resource Files\example\obj</Filter>
+    </Image>
+    <Image Include="App\resource\player.png">
+      <Filter>Resource Files\resource</Filter>
     </Image>
   </ItemGroup>
   <ItemGroup>
@@ -819,6 +828,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ButtonList.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GamePlayer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -5,4 +5,5 @@ enum class AppState
 	Title,
 	LanguageSelect,
 	Settings,
+	Game,
 };

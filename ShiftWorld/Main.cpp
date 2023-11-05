@@ -116,6 +116,7 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
 	FontAsset::Register(U"Text", FontMethod::MSDF, 48, Resource(U"example/font/DotGothic16/DotGothic16-Regular.ttf"), FontStyle::Bitmap);
 
 	TextureAsset::Register(U"Player", Resource(U"resource/player.png"));
+	TextureAsset::Register(U"NPC", Resource(U"resource/npc.png"));
 
 	const auto gameData = std::make_shared<GameData>();
 	gameData->load();

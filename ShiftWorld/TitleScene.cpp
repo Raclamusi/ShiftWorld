@@ -39,7 +39,7 @@ void TitleScene::update()
 
 		if (index == 0)
 		{
-
+			changeScene(AppState::Game, 2s);
 		}
 		else if (index == 1)
 		{

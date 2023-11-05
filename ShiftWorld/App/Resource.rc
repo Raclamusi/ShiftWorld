@@ -120,6 +120,7 @@ Resource(engine/soundfont/GMGSx.sf2.zstdcmp)
 //////////////////////////////////////////////////////
 Resource(example/font/DotGothic16/DotGothic16-Regular.ttf)
 Resource(resource/player.png)
+Resource(resource/npc.png)
 
 
 /* examples 

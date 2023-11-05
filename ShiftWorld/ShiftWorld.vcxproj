@@ -116,6 +116,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="GameData.cpp" />
+    <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="LanguageSelectScene.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="SettingScene.cpp" />
@@ -151,6 +152,7 @@
     <Image Include="App\example\texture\wood.jpg" />
     <Image Include="App\example\windmill.png" />
     <Image Include="App\icon.ico" />
+    <Image Include="App\resource\player.png" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="App\Resource.rc" />
@@ -325,6 +327,8 @@
     <ClInclude Include="Button.hpp" />
     <ClInclude Include="ButtonList.hpp" />
     <ClInclude Include="GameData.hpp" />
+    <ClInclude Include="GamePlayer.hpp" />
+    <ClInclude Include="GameScene.hpp" />
     <ClInclude Include="LanguageSelectScene.hpp" />
     <ClInclude Include="Resolution.hpp" />
     <ClInclude Include="SettingsScene.hpp" />
