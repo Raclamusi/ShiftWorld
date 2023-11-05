@@ -17,16 +17,16 @@ SettingsScene::SettingsScene(const InitData& init)
 		m_title = titleFont(U"せってい");
 		m_texts[0] = font(U"かいぞうど");
 		m_texts[1] = font(U"こうかおん");
-		m_buttons[2].text = font(U"もどる");
-		m_buttons[3].text = font(U"ライセンスを表示");
+		m_buttons[2].text = font(U"ライセンスを表示");
+		m_buttons[3].text = font(U"もどる");
 	}
 	else
 	{
 		m_title = titleFont(U"Settings");
 		m_texts[0] = font(U"Resolution");
 		m_texts[1] = font(U"Sound Volume");
-		m_buttons[2].text = font(U"Back");
-		m_buttons[3].text = font(U"Show Licenses");
+		m_buttons[2].text = font(U"Show Licenses");
+		m_buttons[3].text = font(U"Back");
 	}
 
 	for (auto&& [i, button] : IndexedRef(m_leftRightButtons))
@@ -42,8 +42,8 @@ SettingsScene::SettingsScene(const InitData& init)
 	m_buttons[1].region = RectF{ 18, 8, 6, 1.5 };
 	m_leftRightButtons[3].region = RectF{ 24.5, 8, 1.5, 1.5 };
 
-	m_buttons[2].region = RectF{ 12, 13, 8, 1.5 };
-	m_buttons[3].region = RectF{ 12, 10, 8, 1.5 };
+	m_buttons[2].region = RectF{ 12, 10, 8, 1.5 };
+	m_buttons[3].region = RectF{ 12, 13, 8, 1.5 };
 
 	m_leftRightButtons.focusedButton().blur();
 }
@@ -102,15 +102,15 @@ void SettingsScene::update()
 		}
 		else if (index == 2)
 		{
+			LicenseManager::ShowInBrowser();
+		}
+		else if (index == 3)
+		{
 			Window::Resize(ResolutionToSize(getData().resolution));
 
 			getData().save();
 
 			changeScene(AppState::Title, TransitionTimeDefault);
-		}
-		else if (index == 3)
-		{
-			LicenseManager::ShowInBrowser();
 		}
 	}
 
