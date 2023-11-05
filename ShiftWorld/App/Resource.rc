@@ -121,6 +121,10 @@ Resource(engine/soundfont/GMGSx.sf2.zstdcmp)
 Resource(example/font/DotGothic16/DotGothic16-Regular.ttf)
 Resource(resource/player.png)
 Resource(resource/npc.png)
+Resource(resource/決定ボタンを押す2.mp3)
+Resource(resource/キャンセル1.mp3)
+Resource(resource/カーソル移動4.mp3)
+Resource(resource/カーソル移動6.mp3)
 
 
 /* examples 

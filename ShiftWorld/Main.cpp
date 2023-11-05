@@ -118,6 +118,11 @@ OTHER DEALINGS IN THE FONT SOFTWARE.
 	TextureAsset::Register(U"Player", Resource(U"resource/player.png"));
 	TextureAsset::Register(U"NPC", Resource(U"resource/npc.png"));
 
+	AudioAsset::Register(U"OK", Resource(U"resource/決定ボタンを押す2.mp3"));
+	AudioAsset::Register(U"Cancel", Resource(U"resource/キャンセル1.mp3"));
+	AudioAsset::Register(U"Select", Resource(U"resource/カーソル移動4.mp3"));
+	AudioAsset::Register(U"Walk", Resource(U"resource/カーソル移動6.mp3"));
+
 	const auto gameData = std::make_shared<GameData>();
 	gameData->load();
 

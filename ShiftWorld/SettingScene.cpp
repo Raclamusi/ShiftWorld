@@ -90,6 +90,8 @@ void SettingsScene::update()
 
 			m_buttons[1].text = font(U"{:3d} %"_fmt(getData().soundVolume * 10));
 		}
+
+		AudioAsset(U"Select").playOneShot();
 	}
 
 	if (m_buttons.update())
@@ -121,6 +123,8 @@ void SettingsScene::update()
 		getData().save();
 
 		changeScene(AppState::Title, TransitionTimeDefault);
+
+		AudioAsset(U"Cancel").playOneShot();
 	}
 }
 

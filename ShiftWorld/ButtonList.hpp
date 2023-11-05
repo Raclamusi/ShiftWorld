@@ -120,6 +120,8 @@ inline void ButtonList::focus(size_t index)
 		focusedButton().blur();
 		m_focusIndex = index;
 		focusedButton().focus();
+
+		AudioAsset(U"Select").playOneShot();
 	}
 }
 
@@ -148,7 +150,14 @@ inline bool ButtonList::update()
 
 	focus(newIndex);
 
-	return isClicked();
+	const bool clicked = isClicked();
+
+	if (clicked)
+	{
+		AudioAsset(U"OK").playOneShot();
+	}
+
+	return clicked;
 }
 
 inline void ButtonList::draw() const
